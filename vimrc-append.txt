@@ -1,0 +1,40 @@
+##########################################################
+# vim /etc/vimrc
+# 在文件底部加入以下脚本，在创建脚本文件的时候自动加上头部注解
+# 例如　vim ss.sh
+
+#######################################################################
+# Fme: ss.sh
+# Author: Steven
+# Email: liuchengwei98@163.com
+# Create Time: 2015年12月13日 星期日 19时28分45秒
+#======================================================================
+#!/bin/bash
+
+##########################################################
+
+autocmd BufNewFile *.py,*.sh, exec ":call SetTitle()"
+let $author_name="Steven"
+let $author_email="liuchengwei98@163.com"
+
+func SetTitle()
+if &filetype == 'sh'
+call setline(1,         "\#######################################################################")
+call append(line("."),"\# File Name: ".expand("%"))
+call append(line(".")+1,"\# Author: ".$author_name)
+call append(line(".")+2,"\# Email: ".$author_email)
+call append(line(".")+3,"\# Create Time: ".strftime("%c"))
+call append(line(".")+4,"\#======================================================================")
+call append(line(".")+5,"\#!/bin/bash")
+call append(line(".")+6,"")
+else
+call setline(1,         "\#######################################################################")
+call append(line("."),"\# File Name: ".expand("%"))
+call append(line(".")+1,"\# Author: ".$author_name)
+call append(line(".")+2,"\# Email: ".$author_email)
+call append(line(".")+3,"\# Create Time: ".strftime("%c"))
+call append(line(".")+4,"\#======================================================================")
+call append(line(".")+5,"\#!/usr/bin/python")
+call append(line(".")+6,"")
+endif
+endfunc
