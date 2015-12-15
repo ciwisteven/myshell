@@ -25,5 +25,6 @@ make && make install
 #测试NGINX
 /usr/local/nginx/sbin/nginx -V
 
+echo '................install end ..................'
 
-
+   
