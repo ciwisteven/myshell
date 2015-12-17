@@ -5,3 +5,7 @@
 *脚本
 ** nginx 源码安装 脚本
 
+** redis keepalived
+
+
+** mysql 日志慢查询分析工具 percona-toolkit 
