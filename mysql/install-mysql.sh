@@ -1,0 +1,24 @@
+#######################################################################
+# File Name: install-mysql.sh
+# Author: Steven
+# Email: liuchengwei98@163.com
+# Create Time: 2015年12月17日 星期四 22时55分40秒
+#======================================================================
+#!/bin/bash
+
+
+#CentOS 7的yum源中貌似没有正常安装mysql时的mysql-sever文件，需要去官网上下载
+wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum install mysql-community-server
+#成功安装之后重启mysql服务
+ 	
+service mysqld restart
+#初次安装mysql是root账户是没有密码的
+#设置密码的方法
+ 	
+mysql -uroot
+mysql> set password for ‘root’@‘localhost’ = password('mypasswd');
+mysql> exit
+
+
