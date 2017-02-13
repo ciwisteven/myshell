@@ -14,16 +14,3 @@
 
 
 
-
-# The header menu
-header:
-    items:
-        index:
-            text: 首页
-            # You can use relative urls
-            relativeUrl: index.html
-        wiki:
-            text: wiki
-            # Or absolute urls
-            #absoluteUrl: http://couscous.io
-            relativeUrl: ./docs/intro/desc.html
